@@ -1,0 +1,23 @@
+server:
+  port: 80
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+  instance:
+    #实列名字
+    instance-id: OrederMain80-openfeign-consumer
+spring:
+  application:
+    name: OrederMain80-openfeign-consumer
+logging:
+  level:
+    com.qianms.service: debug
+feign:
+  client:
+    config:
+      default:
+        #连接时间
+        connectTimeout: 2000
+        #读取数据超时
+        readTimeout: 2000
