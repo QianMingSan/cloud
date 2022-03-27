@@ -9,4 +9,4 @@ eureka:
     instance-id: PaymentMain8001
 spring:
   application:
-    name: PaymentMain8001
+    name: PaymentMain

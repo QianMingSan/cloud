@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 @RestController
@@ -13,7 +12,6 @@ import java.util.concurrent.TimeUnit;
 public class PaymentController {
     @Value("${server.port}")
     private String port;
-
     @GetMapping("index")
     public String index(){
         return "success";

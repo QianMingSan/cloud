@@ -1,0 +1,45 @@
+server:
+  port: 9527
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+  instance:
+    #实列名字
+    instance-id: cloud-gateway-9527
+
+
+
+spring:
+  application:
+    name: cloud-gateway-9527
+  cloud:
+    gateway:
+      #路由配置
+      routes:
+        #id没有具体规则 但是有一点唯一性
+        #http://localhost/order/index
+        - id: OrederMain80-openfeign-consumer
+          #目标服务地址
+          uri: http://localhost:80
+          #路由条件
+          #断言会接收一个输入的参数，并返回一个布尔值
+          predicates:
+            - Path=/order/*
+
+        - id: PaymentMain
+            #目标服务地址 lb后面是微服务的名字
+          uri: lb://PAYMENTMAIN
+            #路由条件
+            #断言会接收一个输入的参数，并返回一个布尔值
+          predicates:
+            - Path=/payment/*
+#            - After=2030-02-15T14:54:23.317+08:00[Asia/Shanghai]
+#            - Before=2030-02-15T14:54:23.317+08:00[Asia/Shanghai]
+#            - Between=2030-02-15T14:54:23.317+08:00[Asia/Shanghai],2030-02-15T14:54:23.317+08:00[Asia/Shanghai]
+#            - Cookie=username,zzyy
+#            - Header=X-Request-Id, \d+
+#            - Host=itbaizhan
+#            - Method=GET
+#            - Query=username,\d+2
