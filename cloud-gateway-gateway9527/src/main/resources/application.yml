@@ -43,3 +43,5 @@ spring:
 #            - Host=itbaizhan
 #            - Method=GET
 #            - Query=username,\d+2
+          filters:
+            - SetStatus=250
