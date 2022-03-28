@@ -1,0 +1,21 @@
+server:
+  port: 3344
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+  instance:
+    #实列名字
+    instance-id: ConfigServer3344
+spring:
+  application:
+    name: ConfigServer3344
+  cloud:
+    config:
+      server:
+        git:
+          #git仓库地址
+          uri: https://github.com/QianMingSan/cloud-config3344.git
+          search-paths:
+            - cloud-config
+      label: main

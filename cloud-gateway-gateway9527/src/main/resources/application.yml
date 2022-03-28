@@ -26,6 +26,12 @@ spring:
       add-to-simple-url-handler-mapping: true
       #路由配置
       routes:
+        - id: cloudauth
+          uri: lb://CLOUDAUTHUSER6500
+          predicates:
+            - Path=/user/*
+
+
         #id没有具体规则 但是有一点唯一性
         #http://localhost/order/index
         - id: OrederMain80-openfeign-consumer

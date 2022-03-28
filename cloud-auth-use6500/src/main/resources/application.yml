@@ -1,3 +1,5 @@
+server:
+  port: 6500
 eureka:
   client:
     service-url:
@@ -8,5 +10,3 @@ eureka:
 spring:
   application:
     name: cloudauthuser6500
-server:
-  port: 6500

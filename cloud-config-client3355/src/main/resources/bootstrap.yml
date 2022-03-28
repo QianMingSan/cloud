@@ -1,0 +1,21 @@
+server:
+  port: 3355
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+  instance:
+    #实列名字
+    instance-id: ConfigClient3355
+spring:
+  application:
+    name:  ConfigClient3355
+  cloud:
+    config:
+      label: main
+      #应用名字
+      name: config
+      #环境名
+      profile: dev
+      #configserver
+      uri: http://localhost:3344
