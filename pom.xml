@@ -16,6 +16,7 @@
         <module>cloud-consumer-resilience4j-order80</module>
         <module>cloud-gateway-gateway9527</module>
         <module>cloud-provide-payment8002</module>
+        <module>cloud-auth-use6500</module>
     </modules>
     <packaging>pom</packaging>
 

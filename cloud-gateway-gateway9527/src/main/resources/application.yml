@@ -16,6 +16,14 @@ spring:
     name: cloud-gateway-9527
   cloud:
     gateway:
+      globalcors:
+      cors-configurations:
+        '[/**]':
+          allowCredentials: true
+          allowedOriginPatterns: "*"
+          allowedMethods: "*"
+          allowedHeaders: "*"
+      add-to-simple-url-handler-mapping: true
       #路由配置
       routes:
         #id没有具体规则 但是有一点唯一性
@@ -45,3 +53,4 @@ spring:
 #            - Query=username,\d+2
           filters:
             - SetStatus=250
+

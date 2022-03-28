@@ -1,0 +1,12 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/
+  instance:
+    #实列名字
+    instance-id: cloudauthuser6500
+spring:
+  application:
+    name: cloudauthuser6500
+server:
+  port: 6500
